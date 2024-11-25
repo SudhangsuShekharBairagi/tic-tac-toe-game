@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#myh1 {
+    text-transform: uppercase;
+    color: rgb(26, 67, 102);
+    font-size: xx-large;
+}
+
+.msg_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#myg {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 50px;
+    height: 500px;
+    width: 500px;
+    box-shadow: 0px 0px 20px 0px;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#myi {
+    margin: 5%;
+    height: 340px;
+    width: 340px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 0px;
+    background: linear-gradient(145deg, rgb(121, 201, 224), rgb(213, 75, 75));
+    border-radius: 10px;
+
+}
+
+#hi {
+    color: rgb(0, 0, 0);
+    -webkit-text-fill-color: yellow;
+    padding: 5px;
+    box-shadow: 0px 0px 20px 0px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, red, rgb(19, 198, 22));
+
+}
+
+#hi:hover {
+    -webkit-text-fill-color: rgb(26, 67, 102);
+    background: none;
+    box-shadow: none;
+
+}
+
+@media(max-width:400px) {
+    #myg {
+        width: 100%;
+    }
+
+}
+
+@media(max-height:700px) {
+    #myg {
+        height: 100%;
+    }
+
+}
+
+.mybutton {
+    height: 20%;
+    width: 20%;
+    background-color: rgb(92, 246, 89);
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    margin: 10px;
+    border-radius: 10px;
+    color: rgb(26, 67, 102);
+    font-size: 100%;
+}
+
+
+.mybutton:hover {
+    background-color: rgb(236, 242, 122);
+    border: 2px solid #023611;
+
+}
+
+.mybutton:active {
+    transform: translateY(-2px);
+    background-color: rgb(136, 14, 14);
+}
+
+.hide {
+    display: none;
+}
+
+#mybutton1,
+#new_g {
+    width: 80px;
+    height: 45px;
+    border: none;
+    background-color: rgb(17, 101, 190);
+    box-shadow: 0px 0px 20px 0px;
+    border-radius: 10px;
+
+}
+
+#new_g {
+    margin-top: 20px;
+}
+
+#mybutton1:active {
+    transform: translateY(5px);
+}
+
+#mybutton1:hover {
+    background-color: rgb(83, 145, 199);
+
+}
+
+#new_g:active {
+    transform: translateY(5px);
+}
+
+#new_g:hover {
+    background-color: rgb(83, 145, 199);
+
+}
+
+#hi {
+    font-size: 20px;
+    color: rgb(26, 67, 102);
+
+}
+
+#myb {
+    display: flex;
+    justify-content: center;
+}
