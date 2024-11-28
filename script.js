@@ -8,7 +8,7 @@ let new_g = document.querySelector("#new_g");
 let playerX = "Computer";
 let playerY = "User";
 let isUserTurn = true; // Tracks turn (true = User, false = Computer)
-let count = 0; // Counts moves
+
 
 const winPatterns = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
@@ -25,7 +25,6 @@ const resetGame = () => {
     hide1.classList.add("hide");
     re.innerText = "";
     isUserTurn = true;
-    count = 0;
 };
 
 // Check for Winner or Draw
@@ -67,7 +66,6 @@ box1.forEach((box, index) => {
         if (isUserTurn && box.innerText === "") {
             box.innerText = "0";
             box.disabled = true;
-            count++;
             isUserTurn = false;
 
             if (!checkWinner()) {
@@ -130,7 +128,6 @@ const computerPlay = () => {
 const makeMove = (index, symbol) => {
     box1[index].innerText = symbol;
     box1[index].disabled = true;
-    count++;
 };
 
 // Event Listeners for Reset and New Game
