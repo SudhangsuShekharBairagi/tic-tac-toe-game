@@ -67,20 +67,68 @@ const computerPlay = () => {
 
     });
 
-    const randomIndex = Math.floor(Math.random() * array.length);
-    const randomElement = array[randomIndex];
-    // computer move
+    // const randomIndex = Math.floor(Math.random() * array.length);
+    // const randomElement = array[randomIndex];
+    // // computer move
+    // box1.forEach((box) => {
+    //     if (true0 === false) {
+    //         document.getElementById(`${randomElement}`).innerText = "X";
+
+    //         true0 = true;
+    //         document.getElementById(`${randomElement}`).disabled = true;
+
+    //     }
+    // });
+
+    // check the win patttern for computer next move
+    for (let pattern of winpattan) {
+        let pos1 = box1[pattern[0]].innerText;
+        let pos2 = box1[pattern[1]].innerText;
+        let pos3 = box1[pattern[2]].innerText;
+        //   console.log(pattern[0]);
+
+
+        if ((pos1 != "" && pos2 != "" && pos3 == "") || (pos1 == "" && pos2 != "" && pos3 != "") || (pos1 != "" && pos2 == "" && pos3 != "")) {
+            if (pos1 === pos2 && pos3 == "") {
+                randomElement = box1[pattern[2]].value;
+                computerPlay2(randomElement);
+            } else if (pos1 === pos3 && pos2 == "") {
+                randomElement = box1[pattern[1]].value;
+                computerPlay2(randomElement);
+            } else if (pos2 === pos3 && pos1 == "") {
+                randomElement = box1[pattern[0]].value;
+                computerPlay2(randomElement);
+            } else {
+                comPlay = true;
+            }
+        } else {
+            comPlay = true;
+        }
+    }
+
+    if (comPlay) {
+        randomIndex = Math.floor(Math.random() * array.length);
+        // console.log(array.length);
+        comPlay = false;
+        randomElement = array[randomIndex];
+        computerPlay2(randomElement);
+
+    }
+
+}
+// function for computer move in the box
+const computerPlay2 = (randomElement) => {
+    // const randomElement2 = randomElement;
     box1.forEach((box) => {
         if (true0 === false) {
             document.getElementById(`${randomElement}`).innerText = "X";
-
+            // box.innerText = "X";
             true0 = true;
             document.getElementById(`${randomElement}`).disabled = true;
 
         }
     });
     checkWin(); //calling the checkWin function for the the win pattern
-
 }
 
 // function for disable the all button box 
@@ -116,22 +164,25 @@ const winner = (winner) => {
 }
 // function for check the winner
 const checkWin = () => {
+    count = 0;
     for (let pattern of winpattan) {
         let pos1 = box1[pattern[0]].innerText;
         let pos2 = box1[pattern[1]].innerText;
         let pos3 = box1[pattern[2]].innerText;
 
 
-        count++;
+
         if (pos1 != "" && pos2 != "" && pos3 != "") {
             if (pos1 === pos2 && pos2 === pos3) {
                 winner(pos1);
                 return true;
+            } else {
+                count++;
             }
         }
     }
-
-    if (count == 72) {
+    // check if the match is draw
+    if (count >= 8) {
         let pos = 9;
         winner(pos);
         return true;
